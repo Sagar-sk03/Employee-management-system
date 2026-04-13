@@ -1,0 +1,70 @@
+<div class="page">
+
+  <h1 class="title">📅 Leave Management</h1>
+
+  <!-- FORM -->
+  <div class="form-card">
+
+    <h2>Apply Leave</h2>
+
+    <div class="form-grid">
+
+      <select [(ngModel)]="leave.leaveType">
+        <option value="">Select Type</option>
+        <option value="Sick">Sick</option>
+        <option value="Casual">Casual</option>
+        <option value="Emergency">Emergency</option>
+      </select>
+
+      <input [(ngModel)]="leave.fromDate" type="date">
+      <input [(ngModel)]="leave.toDate" type="date">
+      <input [(ngModel)]="leave.reason" placeholder="Reason">
+
+    </div>
+
+    <button class="submit-btn" (click)="submitLeave()">
+      Submit Leave
+    </button>
+
+  </div>
+
+  <!-- TABLE -->
+  <div class="table-card">
+
+    <h2>My Leave Requests</h2>
+
+    <table class="modern-table">
+
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let leave of leaves">
+          <td>{{leave.leaveType}}</td>
+          <td>{{leave.fromDate}}</td>
+          <td>{{leave.toDate}}</td>
+
+          <td>
+            <span class="status"
+              [ngClass]="{
+                'approved': leave.status === 'APPROVED',
+                'rejected': leave.status === 'REJECTED',
+                'pending': leave.status === 'PENDING'
+              }">
+              {{leave.status}}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

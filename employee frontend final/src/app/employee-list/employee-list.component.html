@@ -1,0 +1,77 @@
+<div class="employee-page">
+
+  <br><br>
+
+  <div class="container">
+
+    <!-- 🔍 SEARCH -->
+    <div class="search-box">
+      <input [(ngModel)]="EnteredID" type="text" placeholder="Search by ID">
+      <button (click)="goToEmployee()">Search</button>
+    </div>
+
+    <br><br>
+
+    <!-- 📊 TABLE -->
+    <div>
+      <table style="margin-bottom: 50px;" class="table">
+
+        <thead class="table-dark">
+          <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let employee of employees">
+
+            <td>{{employee.id}}</td>
+            <td>{{employee.fname}}</td>
+            <td>{{employee.lname}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.department}}</td>
+            <td>{{employee.designation}}</td>
+
+            <td>
+
+              <!-- 👑 ADMIN ONLY -->
+              <button *ngIf="role === 'admin'"
+                      (click)="updateEmployee(employee.id)"
+                      class="btn btn-secondary btn-sm">
+                Update
+              </button>
+
+              <button *ngIf="role === 'admin'"
+                      (click)="deleteEmployee(employee.id)"
+                      class="btn btn-danger btn-sm"
+                      style="margin-left: 10px">
+                Delete
+              </button>
+
+              <!-- 👤 BOTH -->
+              <button (click)="detailsOfEmployee(employee.id)"
+                      class="btn btn-success btn-sm"
+                      style="margin-left: 10px">
+                View
+              </button>
+
+            </td>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- OPTIONAL STATUS -->
+<span class="badge active">Active</span>

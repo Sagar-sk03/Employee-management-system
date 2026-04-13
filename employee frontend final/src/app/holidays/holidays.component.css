@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+}
+
+.holiday-page {
+  width: 90%;
+  margin: auto;
+  color: white;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* TITLE */
+.title {
+  margin: 30px 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* CARD */
+.holiday-card {
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TABLE */
+.holiday-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.holiday-table th {
+  background: linear-gradient(90deg, #1f4068, #2a5298);
+  padding: 15px;
+  font-size: 16px;
+}
+
+.holiday-table td {
+  padding: 15px;
+  font-size: 15px;
+}
+
+/* ROW HOVER */
+.holiday-table tbody tr {
+  transition: 0.3s;
+}
+
+.holiday-table tbody tr:hover {
+  background: rgba(255,255,255,0.15);
+  transform: scale(1.01);
+}
+
+/* STRIPED EFFECT */
+.holiday-table tbody tr:nth-child(even) {
+  background: rgba(255,255,255,0.05);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

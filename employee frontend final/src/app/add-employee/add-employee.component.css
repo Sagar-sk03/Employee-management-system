@@ -1,0 +1,111 @@
+/* 🔥 BACKGROUND */
+.employee-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: url('/assets/d1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+.employee-page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.85);
+}
+
+/* FORM CARD */
+.form-container {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+/* CARD HOVER */
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+}
+
+/* INPUT */
+.form-control, .form-select {
+  background: rgba(255,255,255,0.08);
+  color: #e2e8f0;
+  border: none;
+}
+
+/* INPUT FOCUS GLOW */
+.form-control:focus,
+.form-select:focus {
+  outline: none;
+  border: 1px solid #3b82f6;
+  box-shadow: 
+    0 0 5px #3b82f6,
+    0 0 15px rgba(59,130,246,0.5);
+}
+
+/* LABEL */
+label {
+  color: #e2e8f0;
+}
+
+/* BUTTON */
+.full-width-button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* RIPPLE EFFECT */
+.ripple-btn::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.4);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.ripple-btn:active::after {
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* PRESS EFFECT */
+button:active {
+  transform: scale(0.95);
+}
+
+/* COLORS */
+.btn-success {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+/* VALIDATION */
+.is-invalid {
+  border: 1px solid red;
+}
+
+.invalid-feedback {
+  color: #f87171;
+}
+
+/* SMOOTH */
+* {
+  transition: all 0.2s ease-in-out;
+}

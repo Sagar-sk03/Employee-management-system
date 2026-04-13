@@ -1,0 +1,26 @@
+<!-- ✅ Carousel Wrapper -->
+<div class="hero-section">
+
+  <!-- 🔽 Carousel -->
+<ngb-carousel 
+  [showNavigationArrows]="false" 
+  [showNavigationIndicators]="false">
+  
+  <ng-template ngbSlide>
+    <img class="bg-img" src="assets/bg.jpg" />
+  </ng-template>
+
+</ngb-carousel>
+  <!-- 🔥 CENTER LOGIN CARD -->
+  <div class="center-box">
+    <div class="login-card">
+      <h2>Welcome Back 👋</h2>
+      <p>Access your Login Dashboard</p>
+
+      <button class="login-btn" (click)="goToAdminLogin()">
+        Login
+      </button>
+    </div>
+  </div>
+
+</div>

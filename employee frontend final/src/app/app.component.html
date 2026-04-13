@@ -1,0 +1,58 @@
+
+ 
+<nav class="navbar navbar-expand-sm bg-dark px-3">
+   <div class="logo">
+    🏢 <span>Employee Management System</span>
+  </div>
+
+  <!-- CENTER MENU -->
+  <div class="mx-auto">
+    <ul class="navbar-nav text-center">
+  
+
+      <!-- 👑 ADMIN MENU -->
+      <ng-container *ngIf="isLoggedIn() && getRole() === 'admin'">
+
+        <li class="nav-item">
+          <a routerLink="admin-dashboard" class="nav-link text-white">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="show-all-employees" class="nav-link text-white">Employees</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="add-employee" class="nav-link text-white">Add Employee</a>
+        </li>
+
+        <li class="nav-item">
+          <a routerLink="admin-leave" class="nav-link text-white">Manage Leave</a>
+        </li>
+
+      
+      </ng-container>
+
+      <!-- 👤 EMPLOYEE MENU -->
+      <ng-container *ngIf="isLoggedIn() && getRole() === 'employee'">
+
+
+
+      </ng-container>
+
+    </ul>
+  </div>
+
+  <!-- RIGHT SIDE (LOGOUT) -->
+  <ul class="navbar-nav ms-auto">
+    <li *ngIf="isLoggedIn()">
+      <a (click)="logout()" class="nav-link logout-btn">
+        Logout
+      </a>
+    </li>
+  </ul>
+
+</nav>
+
+<!-- ROUTER -->
+<router-outlet></router-outlet>
+

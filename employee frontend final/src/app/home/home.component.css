@@ -1,0 +1,127 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* 🔥 NAVBAR */
+.navbar {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h1 {
+  color: #fff;
+  font-size: 26px;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px cyan;
+}
+
+/* HERO */
+.hero-section {
+  position: relative;
+}
+
+/* BACKGROUND IMAGE */
+.bg-img {
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 1;
+}
+
+/* CENTER BOX */
+.center-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* 🔥 GLASS CARD */
+.login-card {
+  width: 340px;
+  padding: 40px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 40px rgba(0,255,255,0.3);
+  transition: 0.3s;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* HOVER */
+.login-card:hover {
+  transform: scale(1.05);
+}
+
+/* TEXT */
+.login-card h2 {
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+
+  background-clip: text;            /* ✅ standard */
+  -webkit-background-clip: text;    /* ✅ for Chrome/Safari */
+
+  color: transparent;
+}
+
+.login-card p {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* BUTTON */
+.login-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(45deg, #00f2fe, #4facfe);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* BUTTON HOVER */
+.login-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00f2fe;
+}
+
+/* FLOAT ANIMATION */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+  }
+
+  .navbar h1 {
+    font-size: 20px;
+  }
+}

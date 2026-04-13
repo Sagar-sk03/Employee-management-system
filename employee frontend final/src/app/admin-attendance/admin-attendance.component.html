@@ -1,0 +1,11 @@
+<h2>Manage Attendance</h2>
+
+<input type="text" placeholder="Employee ID" [(ngModel)]="empId">
+<input type="date" [(ngModel)]="date">
+
+<select [(ngModel)]="status">
+  <option value="Present">Present</option>
+  <option value="Absent">Absent</option>
+</select>
+
+<button (click)="markAttendance()">Mark Attendance</button>

@@ -1,0 +1,114 @@
+/* 🔥 PAGE BACKGROUND */
+body {
+  background: linear-gradient(to right, #eef2f3, #dfe9f3);
+}
+
+/* MAIN CONTAINER */
+.dashboard-container {
+min-height: 100vh;
+  background: url('/assets/dbg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* 🔥 WELCOME BOX */
+.welcome-box {
+  background: linear-gradient(90deg, #00e6c3, #0072ff);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.welcome-box h3 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.welcome-box p {
+  opacity: 0.9;
+}
+
+/* 🔥 GRID */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* 🔥 CARD STYLE */
+.card {
+  background: linear-gradient(135deg, #00e6c3, #0072ff);
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.1),
+    0 10px 25px rgba(0,0,0,0.2);
+
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease;
+}
+
+/* ICON */
+.icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+/* TITLE */
+.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 🔥 HOVER EFFECT */
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* ✨ GLOW EFFECT */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.1);
+  top: -100%;
+  left: 0;
+  transition: 0.4s;
+}
+
+.card:hover::before {
+  top: 0;
+}
+
+/* 🔥 ANIMATION */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 📱 RESPONSIVE */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 15px;
+  }
+
+  .welcome-box h3 {
+    font-size: 22px;
+  }
+}

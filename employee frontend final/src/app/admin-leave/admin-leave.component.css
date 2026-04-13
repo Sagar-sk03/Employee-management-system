@@ -1,0 +1,134 @@
+/* 🌌 PAGE BACKGROUND */
+.page {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🧊 CARD */
+.card-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* 🔥 TITLE */
+.title {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #ffffffaa;
+  margin-bottom: 20px;
+}
+
+/* 📊 TABLE */
+.table {
+  border-collapse: separate;
+border-collapse: collapse; /* removes gaps */
+ background: transparent !important;
+
+}
+.table td,
+.table th {
+  background: transparent !important;
+}
+
+/* HEADER */
+.table thead th {
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px;
+}
+
+/* ROW STYLE */
+.table tbody tr {
+  background: rgba(255, 255, 255, 0.15); /* transparent glass */
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.table tbody tr:hover {
+  transform: scale(1.01);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* CELL */
+.table td {
+  padding: 15px;
+  border: none;
+  color: #333;
+}
+
+/* EMAIL STRONG */
+.table td:first-child {
+  font-weight: 600;
+  color: #000;
+}
+
+/* TYPE */
+.table td:nth-child(2) {
+  color: #444;
+}
+
+/* 🏷 STATUS */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.approved {
+  background: #00c853;
+}
+
+.rejected {
+  background: #ff1744;
+}
+
+.pending {
+  background: #ff9100;
+}
+
+/* 🎯 BUTTONS */
+.icon-btn {
+  border: none;
+  margin: 0 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* APPROVE */
+.icon-btn.approve {
+  background: #00c853;
+  color: white;
+}
+
+.icon-btn.approve:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #00c853;
+}
+
+/* REJECT */
+.icon-btn.reject {
+  background: #ff1744;
+  color: white;
+}
+
+.icon-btn.reject:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px #ff1744;
+}
